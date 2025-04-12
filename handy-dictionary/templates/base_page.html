@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block pagetitle %}{% endblock %}</title>
+    {% load static %}
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+        body {
+            background: #fffaf5; /* Мягкий кремовый */
+            color: #5c4033;       /* Молочно-шоколадный */
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        header {
+            background-color: #d8a48f; /* Пастельный карамельный */
+            padding: 20px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        header a {
+            color: #ffffff !important;
+            text-decoration: none;
+        }
+
+        #title-box {
+            background: linear-gradient(to right, #f9e0c7, #fbd6c0); /* Персиково-бежевый градиент */
+            border-left: 8px solid #d8a48f;
+        }
+
+        h1.display-1 {
+            color: #6d4c41; /* Шоколадный */
+        }
+
+        .fs-4 {
+            color: #7a5547;
+        }
+
+        footer {
+            background-color: #fdebd2;
+            padding: 15px;
+            border-top: 1px solid #efd9c8;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b4c3b;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div class="container">
+        <header class="mb-4 shadow-sm">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <div class="fs-2">
+                    <img src="{% static 'book.svg' %}" alt="Проект про математику" width="40" height="40" class="me-2"/>
+                    <span>Образовательный проект - Подручный словарик</span>
+                </div>
+            </a>
+        </header>
+
+        <div class="p-5 mb-4 rounded-3" id="title-box">
+            <div class="container-fluid py-5">
+                <h1 class="display-1 fw-bold">{% block page-title %}{% endblock %}</h1>
+                <p class="col-md-8 fs-4">{% block page-lead %}{% endblock %}</p>
+            </div>
+        </div>
+
+        {% block content %}{% endblock %}
+
+        <footer class="footer border-top">
+            © 2025 · С теплом и вдохновением ☕📘
+        </footer>
+    </div>
+</main>
+</body>
+</html>
