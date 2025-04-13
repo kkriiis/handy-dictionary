@@ -1,0 +1,58 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Подручный словарик
+{% endblock %}
+
+{% block page-lead %}
+Эта страничка создана в качестве инструмента для взаимодействия со словарём <br/>
+Здесь вы можете создать свой словарь и быстро искать нужные термины по ключевым словам из определений
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 py-5" id="project-contents">
+    <h2 class="pb-2 border-bottom">Что можно сделать</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Посмотреть список терминов</h3>
+                <p>Список доступных терминов из БД, представленный в виде таблицы</p>
+                <a href="/terms-list" class="btn btn-primary">Посмотреть</a>
+            </div>
+        </div>
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Добавить термин</h3>
+                <p>Форма для заполнения термина</p>
+                <a href="/add-term" class="btn btn-primary">
+                    Заполнить
+                </a>
+            </div>
+        </div>
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Найти термин</h3>
+                <p>Поиск термина по ключевому слову из определения</p>
+                <a href="/add-founded-term" class="btn btn-primary">
+                    Искать
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
